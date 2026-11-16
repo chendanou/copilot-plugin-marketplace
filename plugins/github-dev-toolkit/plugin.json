@@ -1,0 +1,31 @@
+{
+  "name": "github-dev-toolkit",
+  "description": "GitHub developer toolkit for Copilot CLI: PR review, issue triage, release notes and commit-message skills; safety and audit hooks; and the GitHub MCP server (github.com).",
+  "version": "1.0.0",
+  "author": {
+    "name": "Chenda Nou",
+    "email": "chendanou@microsoft.com"
+  },
+  "homepage": "https://github.com/YOUR-ORG/copilot-plugin-marketplace",
+  "repository": "https://github.com/YOUR-ORG/copilot-plugin-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "pull-requests",
+    "issues",
+    "releases",
+    "mcp",
+    "hooks"
+  ],
+  "category": "developer-tools",
+  "tags": [
+    "github",
+    "code-review",
+    "automation",
+    "security"
+  ],
+  "agents": "agents/",
+  "skills": "skills/",
+  "hooks": "hooks.json",
+  "mcpServers": ".mcp.json"
+}

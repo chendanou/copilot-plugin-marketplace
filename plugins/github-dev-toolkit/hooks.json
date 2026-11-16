@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "bash": "f=\"${PLUGIN_ROOT:-${COPILOT_PLUGIN_ROOT:-$CLAUDE_PLUGIN_ROOT}}/hooks/scripts/session-start.js\"; if [ -f \"$f\" ]; then node \"$f\"; else cat >/dev/null; fi",
+        "powershell": "$r = if ($env:PLUGIN_ROOT) { $env:PLUGIN_ROOT } elseif ($env:COPILOT_PLUGIN_ROOT) { $env:COPILOT_PLUGIN_ROOT } else { $env:CLAUDE_PLUGIN_ROOT }; $f = Join-Path \"$r\" \"hooks/scripts/session-start.js\"; if ($r -and (Test-Path $f)) { $input | node $f } else { $null = $input | Out-String }",
+        "timeoutSec": 15
+      }
+    ],
+    "preToolUse": [
+      {
+        "type": "command",
+        "bash": "f=\"${PLUGIN_ROOT:-${COPILOT_PLUGIN_ROOT:-$CLAUDE_PLUGIN_ROOT}}/hooks/scripts/pre-tool-guard.js\"; if [ -f \"$f\" ]; then node \"$f\"; else cat >/dev/null; fi",
+        "powershell": "$r = if ($env:PLUGIN_ROOT) { $env:PLUGIN_ROOT } elseif ($env:COPILOT_PLUGIN_ROOT) { $env:COPILOT_PLUGIN_ROOT } else { $env:CLAUDE_PLUGIN_ROOT }; $f = Join-Path \"$r\" \"hooks/scripts/pre-tool-guard.js\"; if ($r -and (Test-Path $f)) { $input | node $f } else { $null = $input | Out-String }",
+        "timeoutSec": 10
+      }
+    ],
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "f=\"${PLUGIN_ROOT:-${COPILOT_PLUGIN_ROOT:-$CLAUDE_PLUGIN_ROOT}}/hooks/scripts/post-tool-audit.js\"; if [ -f \"$f\" ]; then node \"$f\"; else cat >/dev/null; fi",
+        "powershell": "$r = if ($env:PLUGIN_ROOT) { $env:PLUGIN_ROOT } elseif ($env:COPILOT_PLUGIN_ROOT) { $env:COPILOT_PLUGIN_ROOT } else { $env:CLAUDE_PLUGIN_ROOT }; $f = Join-Path \"$r\" \"hooks/scripts/post-tool-audit.js\"; if ($r -and (Test-Path $f)) { $input | node $f } else { $null = $input | Out-String }",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}

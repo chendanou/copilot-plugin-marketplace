@@ -1,0 +1,41 @@
+{
+  "name": "chenda-copilot-plugins",
+  "owner": {
+    "name": "Chenda Nou",
+    "email": "chendanou@microsoft.com"
+  },
+  "metadata": {
+    "description": "Curated GitHub Copilot CLI plugins for GitHub-centric developer workflows",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "github-dev-toolkit",
+      "description": "Skills, safety hooks and the GitHub MCP server for pull-request review, issue triage, release notes and conventional commits.",
+      "version": "1.0.0",
+      "source": "./plugins/github-dev-toolkit",
+      "author": {
+        "name": "Chenda Nou",
+        "email": "chendanou@microsoft.com"
+      },
+      "homepage": "https://github.com/chendanou/copilot-plugin-marketplace",
+      "repository": "https://github.com/chendanou/copilot-plugin-marketplace",
+      "license": "MIT",
+      "keywords": [
+        "github",
+        "pull-requests",
+        "issues",
+        "releases",
+        "mcp",
+        "hooks"
+      ],
+      "category": "developer-tools",
+      "tags": [
+        "github",
+        "code-review",
+        "automation",
+        "security"
+      ]
+    }
+  ]
+}
